@@ -8,6 +8,7 @@ RUN  echo 'test:test' | chpasswd
 
 RUN service ssh start
 RUN ssh-keygen -q -t rsa -N '' -f /id_rsa
+RUN /usr/bin/ssh-keygen -A 
 
 EXPOSE 22
 
