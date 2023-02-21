@@ -3,7 +3,7 @@ FROM ubuntu:latest
 RUN apt update && apt install  openssh-server sudo -y
 RUN mkdir -p ~/.ssh
 RUN rm /etc/ssh/sshd_config
-RUN cp /ssd/sshd_config /etc/ssh/
+ADD ./ssd/ /etc/ssh/
 
 RUN useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1000 test 
 
